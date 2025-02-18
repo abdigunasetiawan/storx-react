@@ -1,7 +1,13 @@
+import Jumbotron from "../components/Jumbotron";
 import Navbar from "../components/Navbar";
 
 const HomePage = () => {
-  return <Navbar></Navbar>;
+  return (
+    <div className="">
+      <Navbar></Navbar>
+      <Jumbotron></Jumbotron>
+    </div>
+  );
 };
 
 export default HomePage;
