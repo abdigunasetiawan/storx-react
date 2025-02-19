@@ -17,7 +17,6 @@ const BestProducts = () => {
     const bestProductsContainer = document.querySelector(".best-products-container");
     const bestProductsLeftButton = document.querySelector("section#best-products button.btn-navigation-left");
     const bestProductsRightButton = document.querySelector("section#best-products button.btn-navigation-right");
-    console.log(bestProductsContainer);
 
     const updateBestProductsButtons = () => {
       const maxScrollLeft = bestProductsContainer.scrollWidth - bestProductsContainer.clientWidth;
@@ -29,12 +28,8 @@ const BestProducts = () => {
       }
 
       if (bestProductsContainer.scrollLeft >= maxScrollLeft) {
-        console.log("hidden");
-
         bestProductsRightButton.style.visibility = "hidden";
       } else {
-        console.log("show");
-
         bestProductsRightButton.style.visibility = "visible";
       }
     };
