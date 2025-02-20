@@ -1,3 +1,4 @@
+import AllProducts from "../components/AllProducts";
 import BestProducts from "../components/BestProducts";
 import Category from "../components/Category";
 import Jumbotron from "../components/Jumbotron";
@@ -10,6 +11,7 @@ const HomePage = () => {
       <Jumbotron></Jumbotron>
       <BestProducts></BestProducts>
       <Category></Category>
+      <AllProducts></AllProducts>
     </div>
   );
 };
