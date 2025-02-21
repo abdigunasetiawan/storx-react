@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getAllProducts } from "../services/product.service";
+import { Link } from "react-router-dom";
 
 function AllProducts() {
   const [allProducts, setAllProducts] = useState([]);
@@ -23,9 +24,9 @@ function AllProducts() {
         <div className="all-products-container flex flex-wrap justify-between gap-y-8 p-2">
           {allProducts.length > 0 &&
             allProducts.map((product) => (
-              <a
+              <Link
                 key={product.title}
-                href="/product/${product.id}"
+                to={`/product/${product.id}`}
                 data-id="${product.id}"
                 className="product-card w-[48%] overflow-hidden rounded-xl shadow lg:w-[24%]"
               >
@@ -82,7 +83,7 @@ function AllProducts() {
                     </div>
                   </div>
                 </div>
-              </a>
+              </Link>
             ))}
         </div>
       </div>
