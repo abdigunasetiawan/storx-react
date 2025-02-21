@@ -17,4 +17,8 @@ const getBestProducts = async () => {
   });
 };
 
-export { getBestProducts, getAllProducts };
+const getProduct = async (id) => {
+  const products = await fetch(`https://fakestoreapi.com/products/${id}`).then((response) => response.json());
+  return products;
+};
+export { getBestProducts, getAllProducts, getProduct };

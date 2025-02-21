@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getAllProducts, getBestProducts } from "../services/product.service";
+import { Link } from "react-router-dom";
 
 const BestProducts = () => {
   const [bestProducts, setBestProducts] = useState([]);
@@ -86,9 +87,9 @@ const BestProducts = () => {
           <div className="best-products-container pointer-events-none relative flex gap-4 gap-y-8 overflow-x-auto scroll-smooth p-2">
             {bestProducts.length > 0 &&
               bestProducts.map((product) => (
-                <a
+                <Link
                   key={product.id}
-                  href={`/product/${product.id}`}
+                  to={`/product/${product.id}`}
                   data-id={product.id}
                   className="product-card pointer-events-auto w-[48%] shrink-0 cursor-pointer overflow-hidden rounded-xl lg:w-[24%]"
                 >
@@ -145,7 +146,7 @@ const BestProducts = () => {
                       </div>
                     </div>
                   </div>
-                </a>
+                </Link>
               ))}
           </div>
 
