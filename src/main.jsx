@@ -8,6 +8,7 @@ import HomePage from "./Pages/HomePage.jsx";
 import ErrorPage from "./Pages/404.jsx";
 import DetailProductPage from "./Pages/detailProductPage.jsx";
 import CategoryPage from "./Pages/categoryPage.jsx";
+import SearchPage from "./Pages/searchPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
   {
     path: "/category/:category",
     element: <CategoryPage />,
+  },
+  {
+    path: "/search/:query",
+    element: <SearchPage />,
   },
 ]);
 

@@ -34,4 +34,12 @@ const getProductByCategory = async (category) => {
   const products = await fetch(`https://fakestoreapi.com/products/category/${categoryParams}`).then((response) => response.json());
   return products;
 };
-export { getBestProducts, getAllProducts, getProduct, getProductByCategory };
+
+const searchProduct = async (query) => {
+  const products = await getAllProducts();
+  console.log(products);
+  return products.filter((product) => {
+    return product.title.toLowerCase().includes(query.toLowerCase());
+  });
+};
+export { getBestProducts, getAllProducts, getProduct, getProductByCategory, searchProduct };
