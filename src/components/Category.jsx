@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Category() {
   const categoryData = [
@@ -41,9 +42,9 @@ function Category() {
 
         <div className="mt-4 flex flex-wrap justify-between gap-y-2.5">
           {categoryData.map((item) => (
-            <a
+            <Link
               key={item.label}
-              href={item.href}
+              to={item.href}
               className="product-category group relative flex aspect-[2/1] w-[48%] items-center justify-center overflow-hidden rounded-lg shadow-sm after:absolute after:inset-0 after:z-10 after:block after:bg-black/50 lg:w-[24%]"
             >
               <span className="absolute z-20 font-semibold text-white">{item.label}</span>
@@ -52,7 +53,7 @@ function Category() {
                 src={item.imgSrc}
                 alt={item.imgAlt}
               />
-            </a>
+            </Link>
           ))}
         </div>
       </div>

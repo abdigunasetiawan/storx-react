@@ -21,4 +21,17 @@ const getProduct = async (id) => {
   const products = await fetch(`https://fakestoreapi.com/products/${id}`).then((response) => response.json());
   return products;
 };
-export { getBestProducts, getAllProducts, getProduct };
+const getProductByCategory = async (category) => {
+  let categoryParams = "";
+  if (category === "men's-clothing") {
+    categoryParams = "men's%20clothing";
+  } else if (category === "women's-clothing") {
+    categoryParams = "women's%20clothing";
+  } else {
+    categoryParams = category;
+  }
+
+  const products = await fetch(`https://fakestoreapi.com/products/category/${categoryParams}`).then((response) => response.json());
+  return products;
+};
+export { getBestProducts, getAllProducts, getProduct, getProductByCategory };
