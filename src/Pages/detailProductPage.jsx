@@ -17,10 +17,6 @@ function DetailProductPage() {
     fetchData();
   }, []);
 
-  useEffect(() => {
-    console.log(product);
-  }, [product]);
-
   return (
     <>
       <Navbar></Navbar>

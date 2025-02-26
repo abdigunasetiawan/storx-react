@@ -9,12 +9,17 @@ import ErrorPage from "./Pages/404.jsx";
 import DetailProductPage from "./Pages/detailProductPage.jsx";
 import CategoryPage from "./Pages/categoryPage.jsx";
 import SearchPage from "./Pages/searchPage.jsx";
+import LoginPage from "./Pages/loginPage.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <HomePage />,
     errorElement: <ErrorPage />,
+  },
+  {
+    path: "/login",
+    element: <LoginPage />,
   },
   {
     path: "/product/:id",

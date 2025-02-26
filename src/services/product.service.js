@@ -37,7 +37,6 @@ const getProductByCategory = async (category) => {
 
 const searchProduct = async (query) => {
   const products = await getAllProducts();
-  console.log(products);
   return products.filter((product) => {
     return product.title.toLowerCase().includes(query.toLowerCase());
   });

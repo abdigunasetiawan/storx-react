@@ -6,6 +6,7 @@ const Navbar = (props) => {
     const query = e.target.inputSearch.value;
     window.location.href = `/search/${query}`;
   };
+  
 
   return (
     <div className="navbar fixed left-0 top-0 z-50 w-full bg-white shadow">
