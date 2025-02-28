@@ -62,7 +62,7 @@ function AllProducts() {
                 <div className="flex h-[100px] flex-col justify-between bg-white px-4 py-2.5">
                   <h1 className="line-clamp-2 text-pretty font-medium text-slate-800">{product.title}</h1>
                   <div className="mt-1 flex justify-between">
-                    <p className="text-lg font-bold text-slate-700">{product.price}</p>
+                    <p className="text-lg font-bold text-slate-700">$ {product.price}</p>
                     <div className="flex items-center gap-1">
                       <svg
                         className="icon icon-tabler icons-tabler-filled icon-tabler-star fill-yellow-400"

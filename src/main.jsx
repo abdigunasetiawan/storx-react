@@ -11,6 +11,9 @@ import CategoryPage from "./Pages/categoryPage.jsx";
 import SearchPage from "./Pages/searchPage.jsx";
 import LoginPage from "./Pages/loginPage.jsx";
 
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
+
 const router = createBrowserRouter([
   {
     path: "/",

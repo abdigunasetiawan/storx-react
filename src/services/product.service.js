@@ -41,4 +41,5 @@ const searchProduct = async (query) => {
     return product.title.toLowerCase().includes(query.toLowerCase());
   });
 };
+
 export { getBestProducts, getAllProducts, getProduct, getProductByCategory, searchProduct };
