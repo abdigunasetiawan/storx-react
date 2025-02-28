@@ -18,6 +18,8 @@ function LoginPage() {
           window.localStorage.setItem("token", res);
           window.location.href = "/";
         } else {
+          e.target.username.value = "";
+          e.target.password.value = "";
           console.log("login gagal");
           setLoginFailed(res.response.data);
         }

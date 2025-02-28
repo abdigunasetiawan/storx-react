@@ -4,16 +4,23 @@ import Category from "../components/Category";
 import Jumbotron from "../components/Jumbotron";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import useAuth from "../hooks/useAuth";
 
 const HomePage = () => {
+  const { isLogin, user } = useAuth();
+
   return (
     <div className="">
-      <Navbar></Navbar>
-      <Jumbotron></Jumbotron>
-      <BestProducts></BestProducts>
-      <Category></Category>
-      <AllProducts></AllProducts>
-      <Footer></Footer>
+      {isLogin && (
+        <>
+          <Navbar></Navbar>
+          <Jumbotron></Jumbotron>
+          <BestProducts></BestProducts>
+          <Category></Category>
+          <AllProducts></AllProducts>
+          <Footer></Footer>
+        </>
+      )}
     </div>
   );
 };
