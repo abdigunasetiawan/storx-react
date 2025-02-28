@@ -5,16 +5,19 @@ import { getProduct } from "../services/product.service";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import useAuth from "../hooks/useAuth";
+import DetailProductPageSkeleton from "../components/skeletons/detailProductPageSkeleton";
 
 function DetailProductPage() {
   const { id } = useParams();
   const [product, setProduct] = useState({});
   const { isLogin, user } = useAuth();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       const product = await getProduct(id);
       setProduct(product);
+      setIsLoading(false);
     };
     fetchData();
   }, []);
@@ -24,7 +27,9 @@ function DetailProductPage() {
       <>
         <Navbar></Navbar>
         <div className="container mx-auto mt-[calc(56px+16px)] flex min-h-[calc(100vh-(64px+16px+58px))] flex-col gap-y-4 px-4 md:px-8 lg:flex-row lg:items-center lg:justify-center lg:gap-x-8 xl:mt-[calc(64px+16px)] xl:px-16">
-          {Object.keys(product).length > 0 && (
+          {isLoading && <DetailProductPageSkeleton />}
+
+          {!isLoading && (
             <>
               <div className="h-72 w-full lg:w-96">
                 <img

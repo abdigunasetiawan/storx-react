@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { getAllProducts, getBestProducts } from "../services/product.service";
 import { Link } from "react-router-dom";
-import Skeleton from "react-loading-skeleton";
-import "react-loading-skeleton/dist/skeleton.css";
+
 import BestProductsCartSkeleton from "./skeletons/BestProductsCartSkeleton";
 
 const BestProducts = () => {

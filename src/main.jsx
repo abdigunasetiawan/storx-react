@@ -4,7 +4,7 @@ import "./index.css";
 
 // Router
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import HomePage from "./Pages/HomePage.jsx";
+import HomePage from "./Pages/homePage.jsx";
 import ErrorPage from "./Pages/404.jsx";
 import DetailProductPage from "./Pages/detailProductPage.jsx";
 import CategoryPage from "./Pages/categoryPage.jsx";
