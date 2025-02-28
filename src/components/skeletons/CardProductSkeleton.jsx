@@ -1,7 +1,7 @@
 import React from "react";
 import Skeleton from "react-loading-skeleton";
 
-const BestProductsCartSkeleton = ({ card }) => {
+const cardProductSkeleton = ({ card }) => {
   return Array(card)
     .fill(0)
     .map((_, i) => (
@@ -25,4 +25,4 @@ const BestProductsCartSkeleton = ({ card }) => {
     ));
 };
 
-export default BestProductsCartSkeleton;
+export default cardProductSkeleton;

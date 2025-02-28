@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { getAllProducts, getBestProducts } from "../services/product.service";
 import { Link } from "react-router-dom";
-
-import BestProductsCartSkeleton from "./skeletons/BestProductsCartSkeleton";
+import CardProductSkeleton from "./skeletons/CardProductSkeleton";
 
 const BestProducts = () => {
   const [bestProducts, setBestProducts] = useState([]);
@@ -89,7 +88,7 @@ const BestProducts = () => {
             </svg>
           </button>
           <div className="best-products-container pointer-events-none relative flex gap-4 gap-y-8 overflow-x-auto scroll-smooth p-2">
-            {isLoading && <BestProductsCartSkeleton card={4} />}
+            {isLoading && <CardProductSkeleton card={20}></CardProductSkeleton>}
 
             {bestProducts.map((product) => (
               <Link

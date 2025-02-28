@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { getAllProducts } from "../services/product.service";
 import { Link } from "react-router-dom";
+import CardProductSkeleton from "./skeletons/CardProductSkeleton";
 
 function AllProducts() {
   const [allProducts, setAllProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       const products = await getAllProducts();
       setAllProducts(products);
+      setIsLoading(false);
     };
     fetchData();
   }, []);
@@ -22,7 +25,8 @@ function AllProducts() {
       <div className="container mx-auto px-4 md:px-8 xl:px-16">
         <h2 className="text-lg font-bold text-slate-800">All Poducts</h2>
         <div className="all-products-container flex flex-wrap justify-between gap-y-8 p-2">
-          {allProducts.length > 0 &&
+          {isLoading && <CardProductSkeleton card={8}></CardProductSkeleton>}
+          {!isLoading &&
             allProducts.map((product) => (
               <Link
                 key={product.title}
