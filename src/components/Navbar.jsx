@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 const Navbar = (props) => {
   const { inputValue } = props;
 
@@ -6,7 +7,6 @@ const Navbar = (props) => {
     const query = e.target.inputSearch.value;
     window.location.href = `/search/${query}`;
   };
-  
 
   return (
     <div className="navbar fixed left-0 top-0 z-50 w-full bg-white shadow">
@@ -121,8 +121,28 @@ const Navbar = (props) => {
               <path d="M6 5l14 1l-1 7h-13" />
             </svg>
           </a>
-          <a href="">
+          <a
+            href=""
+            className="h-6 w-6 overflow-hidden rounded-full outline outline-4 outline-gray-400"
+          >
             <svg
+              className="h-full w-full object-cover"
+              xmlns="http://www.w3.org/2000/svg"
+              width="300"
+              height="300"
+              viewBox="0 0 300 300"
+            >
+              <rect
+                width="100%"
+                height="100%"
+                fill="#DDDDDD"
+              />
+              <path
+                fill="#999999"
+                d="M175.875 95.175v69.9q0 9.15-2.25 16.5t-6.71 12.52q-4.47 5.18-11.14 7.96-6.68 2.77-15.53 2.77-4.05 0-7.95-.49t-8.17-1.53q.22-3 .52-6.01.3-2.99.53-5.99.22-1.65 1.31-2.67 1.09-1.01 3.11-1.01 1.28 0 3.34.53 2.06.52 5.21.52 4.28 0 7.58-1.24t5.51-3.94q2.21-2.69 3.34-7.01 1.12-4.31 1.12-10.46v-70.35z"
+              />
+            </svg>
+            {/* <svg
               className="icon icon-tabler icons-tabler-outline icon-tabler-user w-6 stroke-gray-700"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -139,7 +159,7 @@ const Navbar = (props) => {
               />
               <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
               <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-            </svg>
+            </svg> */}
           </a>
         </div>
         {/*  _Icons  */}
